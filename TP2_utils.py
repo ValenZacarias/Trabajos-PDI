@@ -1,7 +1,7 @@
 import numpy as np
 import cv2 as cv
 
-##testeando push
+
 def onclick(event, pto_i, pto_f):
     return event.button, event.x, event.y, event.xdata, event.ydata
 
