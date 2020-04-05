@@ -38,7 +38,7 @@ def mapeo_negativo_ac(a,c):
 #                                                               #
 #         Variacion de valores mediante un trackbar             #
 #                                                               #
-# Con un trackbar previamente inicializado en una image         #
+# Con un trackbar previamente inicializado en una imagen        #
 # Recibe un valor desde el cual arranca el parametro y se le    #
 # un delta a ese valor que esta dado por la posicion del        #
 # trackbar sobre un "delta" que da el factor de escala (1, 0.1  #
