@@ -10,7 +10,7 @@ from Utils_Operaciones import *
 from Utils_GUI import *
 
 #Se tomó una de las botellas llenas para tener como referencia para los calculos
-def botellaLlena():
+def botellaReferencia():
     img_modelo = cv.imread("../Data/modelo_botela.tif",cv.IMREAD_GRAYSCALE)
     print(img_modelo)
     opUmbralGrises(img_modelo,(0,210),255)
@@ -19,7 +19,7 @@ def botellaLlena():
     px_llena = np.average(fila_med)
     return px_llena
 
-ref_llena = botellaLlena()
+ref_llena = botellaReferencia()
 p_umbral = 0.15   # 15% con respecto a la botella llena
 umbral = ref_llena * (1 + p_umbral)     #Si no esta llena, va a tener mas blanco ->255
 
