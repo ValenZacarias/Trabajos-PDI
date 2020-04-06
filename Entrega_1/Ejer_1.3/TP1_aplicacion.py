@@ -3,10 +3,11 @@ import cv2 as cv
 import matplotlib.pyplot as plt
 from Utils_Edicion import *
 from Utils_Operaciones import *
+from Utils_GUI import *
 
 #Se tomó una de las botellas llenas para tener como referencia para los calculos
 def botellaLlena():
-    img_modelo = cv.imread("../data/modelo_botela.tif",cv.IMREAD_GRAYSCALE)
+    img_modelo = cv.imread("../../data/modelo_botela.tif",cv.IMREAD_GRAYSCALE)
     opUmbralGrises(img_modelo,(0,210),255)
     pt_med = centroBotella(img_modelo)
     fila_med = img_modelo[pt_med[0]:,pt_med[1]]
@@ -20,19 +21,13 @@ umbral = ref_llena * (1 + p_umbral)     #Si no esta llena, va a tener mas blanco
 #Pre-procesamiento
 #Se carga la imagen a analizar, se la pre procesa mateniendo la escala de grises dentro del
 #intervalo de intensidad (0,210) y por fuera se lo lleva a 255, para eliminar ruido
-img = cv.imread("../data/botellas.tif",cv.IMREAD_GRAYSCALE)
+img = cv.imread("../../data/botellas.tif",cv.IMREAD_GRAYSCALE)
 print('alto: %d, ancho: %d' % (img.shape[0], img.shape[1]))
 opUmbralGrises(img,(0,210),255)
 cv.imshow("transformada ", img)
 cv.waitKey(0)
 cv.destroyAllWindows()
 
-"""
-img_rgb, inicio, fin = bounding_box(img)
-cv.imshow("transformada ", img_rgb)
-cv.waitKey(0)
-cv.destroyAllWindows()
-"""
 #Se procesara la imagen tomando de a una botella, aislandola mediante límites en la imagen
 #luego se recorta la parte analizada para realizar el mismo procedimiento con el resto de la imagen
 #Si se encuentra una botella con menos contenido, se guardan sus coordenadas absolutas de "aislamiento"
@@ -71,9 +66,6 @@ while(img.shape[1]!=0):
 
         porc = 200 - (avg_botella*100/ref_llena) 
         porcentaje.append(porc)
-
-        contador += 1
-        print("contador:", contador)
 
     img_rgb, _, _ = bounding_box(img)
     cv.imshow("transformada ", img_rgb)

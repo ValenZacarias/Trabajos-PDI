@@ -132,7 +132,10 @@ def mapeo_potencia(c,gamma):
 
 #---------------------------------OPERACIONES DE MULTIPLES IMAGENES----------------------------------------
 
-
+#########################################################
+#                                                       #
+#                   OPERADOR SUMA                       #
+#
 
 
 # @FALTA ARREGLAR
