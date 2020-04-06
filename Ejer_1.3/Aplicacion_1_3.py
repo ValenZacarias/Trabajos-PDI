@@ -3,7 +3,7 @@ import cv2 as cv
 import matplotlib.pyplot as plt
 
 import sys
-sys.path.append('./Utils')
+sys.path.append('../Utils/')
 
 from Utils_Edicion import *
 from Utils_Operaciones import *
@@ -11,7 +11,7 @@ from Utils_GUI import *
 
 #Se tomó una de las botellas llenas para tener como referencia para los calculos
 def botellaLlena():
-    img_modelo = cv.imread("./Data/modelo_botela.tif",cv.IMREAD_GRAYSCALE)
+    img_modelo = cv.imread("../Data/modelo_botela.tif",cv.IMREAD_GRAYSCALE)
     print(img_modelo)
     opUmbralGrises(img_modelo,(0,210),255)
     pt_med = centroBotella(img_modelo)
@@ -26,8 +26,7 @@ umbral = ref_llena * (1 + p_umbral)     #Si no esta llena, va a tener mas blanco
 #Pre-procesamiento
 #Se carga la imagen a analizar, se la pre procesa mateniendo la escala de grises dentro del
 #intervalo de intensidad (0,210) y por fuera se lo lleva a 255, para eliminar ruido
-img = cv.imread("./Data/botellas.tif",cv.IMREAD_GRAYSCALE)
-print('alto: %d, ancho: %d' % (img.shape[0], img.shape[1]))
+img = cv.imread("../Data/botellas.tif",cv.IMREAD_GRAYSCALE)
 opUmbralGrises(img,(0,210),255)
 cv.imshow("transformada ", img)
 cv.waitKey(0)
