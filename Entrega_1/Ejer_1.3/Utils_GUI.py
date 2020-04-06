@@ -1,5 +1,12 @@
 #################################################################
 #                                                               #
+#                   FUNCIONES DE GUI                            #
+# Funciones que operan sobre la interfaz de usuario y pueden    #
+# interactuar con los scripts                                   #
+# ###############################################################
+
+#################################################################
+#                                                               #
 #         Variacion de valores mediante un trackbar             #
 #                                                               #
 # Con un trackbar previamente inicializado en una image         #
