@@ -45,14 +45,9 @@ def opUmbralGrises(img, umbral, color):
 def opOffset(img, offset):
     for i in range(img.shape[0]):
         for j in range(img.shape[1]):
-            px = img[i,j]
-            px = px + offset
-            if (px < 0):
-                img[i,j] = 0
-            elif (px > 255):
-                img[i,j] = 255
-            else:
-                img[i,j] = px
+            img[i,j] = img[i,j] + offset
+            img[i,j] = max(img[i,j],0)
+            img[i,j] = min(img[i,j],255)
 
 
 
