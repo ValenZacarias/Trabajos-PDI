@@ -132,10 +132,23 @@ def mapeo_potencia(c,gamma):
 
 #---------------------------------OPERACIONES DE MULTIPLES IMAGENES----------------------------------------
 
-#########################################################
-#                                                       #
-#                   OPERADOR SUMA                       #
-#
+##########################################################
+#                                                        #
+#               OPERADOR ARITMETICO                      #
+# Realiza la op aritmetica de dos imagenes               #
+# @param: img1, img2, tipo                               #
+# @return: imgResultado                                  #
+##########################################################
+
+def opAritmeticas(img1, img2, tipo):
+    TYPES = {
+        "suma": cv.add(img1, img2),
+        "resta": cv.subtract(img1, img2),
+        "division": cv.divide(img1, img2),
+        "multiplicacion": cv.multiply(img1, img2),
+    }
+    imgResultado = TYPES[tipo]
+    return imgResultado
 
 
 # @FALTA ARREGLAR
