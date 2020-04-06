@@ -12,7 +12,6 @@ from Utils_GUI import *
 #Se tomó una de las botellas llenas para tener como referencia para los calculos
 def botellaReferencia():
     img_modelo = cv.imread("../Data/modelo_botela.tif",cv.IMREAD_GRAYSCALE)
-    print(img_modelo)
     opUmbralGrises(img_modelo,(0,210),255)
     pt_med = centroBotella(img_modelo)
     fila_med = img_modelo[pt_med[0]:,pt_med[1]]
