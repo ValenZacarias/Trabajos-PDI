@@ -1,7 +1,8 @@
 import numpy as np
 import cv2 as cv
 import matplotlib.pyplot as plt
-from TP1_utils import *
+from Utils_Edicion import *
+from Utils_Operaciones import *
 
 #Se tomó una de las botellas llenas para tener como referencia para los calculos
 def botellaLlena():
