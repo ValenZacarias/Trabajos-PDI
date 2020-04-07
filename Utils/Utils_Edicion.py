@@ -104,8 +104,8 @@ def mapeo_log(c):
         s[i] = (c * np.log(1 + i)) / np.log(256) * 255
         s[i] = max(s[i],0)
         s[i] = min(s[i],255)
-
     s = s.astype(int)
+    s = s.astype(np.uint8)
     return s
 
 
@@ -127,6 +127,7 @@ def mapeo_potencia(c,gamma):
         s[i] = c * pow(i, gamma)
         s[i] = max(s[i], 0)
         s[i] = min(s[i], 255)
+    s = s.astype(int)
     s = s.astype(np.uint8)
     return s
 
